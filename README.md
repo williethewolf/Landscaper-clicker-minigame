@@ -4,7 +4,7 @@
 
 ![studio ghibli landscape](https://peakmemory.files.wordpress.com/2014/06/cliufqx.jpg)
 
-You'll be creating a simple, browser-based JavaScript game that utilizes `alert()` and `prompt()` to send messages and receive input from the user.
+You'll be creating a simple, browser-based JavaScript game that utilizes `console.log()` / `alert()` and `prompt()` to send messages and receive input from the user.
 
 #### Learning Objectives
 

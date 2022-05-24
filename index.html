@@ -9,12 +9,15 @@
           <script src="script.js" async></script>
       </head>
       <body>
-        <!-- <div id = "welcome-modal" class = "modal"><div class="modal-content"><p>Welcome to Landscaper Tycoon! In this game you will have to cut grass to make money, which you will be able to spend in upgrades which will allow you to cut more grass and make more money faster. Sounds good? So lets eat some grass and grab some cash!</p></div></div>
-        <div id = "victory-modal" class = "modal"><div class="modal-content"></div></div> -->
+        <div id = "welcome-modal" class = "modal"><div class="modal-content">
+          <h1>Welcome to<br> <span = id="modal-title">Landscaper Tycoon!</span></h1>
+          <p>Are you hungry for some grass? In this game you will have to cut grass to make money, which you will be able to spend in upgrades which will allow you to cut more grass and make more money faster. Sounds good? So lets eat some grass and grab some cash!</p>
+        <button id = "close">close</button></div></div>
+        <div id = "victory-modal" class = "modal"><div class="modal-content"><h1>You Won!</h1><p>You ate enough grass to be the one handing the cash. <br>Congratulations!</p><button id = "restart">restart</button></div></div>
         <div id = "game-screen" >
           <div id="title"><h1>Landscaper Tycoon</h1></div>
           <div id = "gardener"><img src="./assets/Gardener.png" alt=""></div>
-          <div id = "lawn"><div class = "grass"></div><div class = "grass"></div><div class = "grass"></div><div class = "grass"></div> <div class = "grass"></div><div class = "grass"></div></div>
+          <div id = "lawn"><div id="timer"></div><div class = "grass"></div><div class = "grass"></div><div class = "grass"></div><div class = "grass"></div> <div class = "grass"></div><div class = "grass"></div></div>
             <div id = "UI-panel"><div id="money-div">Money: <span id = "money-display"></span></div><img id = "tool-img" src="" alt="tool"><div id = "tool-upgrade-container"><button type ="button" id = "upgradeButton">Upgrade tool<br><span id ="upgrade-tool"></span></button></div></div>
             <div id = "soil"> <div id = cut-button-container><button type ="button" id = "cutButton">Cut Grass</button></div></div>   
             

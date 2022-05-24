@@ -1,3 +1,9 @@
+body {
+    width: 100vw;
+    background-color: #654321;
+    margin: auto;
+}
+
 button{
       appearance: none;
       background-color: #2ea44f;
@@ -49,23 +55,75 @@ button-3:active {
       box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
     } 
 
+.grass {
+    grid-row: 2;
+    content:url("./assets/grass-clipart.png");
+    width: 135%;
+    height: 135%;
+    align-self: end ;
+    overflow: visible;
+}
+@keyframes growGrass{
+    0%{
+        height: 50%;
+    }
+    100%{
+        height: 300%;
+    } 
+    
+}
+.animate-growth{
+    animation-name: growGrass;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    
+    /* animation-iteration-count: infinite; */
+    /* height: 300%;
+    transition: height 6s ease-in-out; */
+}
 
 #game-screen{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto auto 10% auto;
+    width: 100vw;
+    object-fit: cover;
+    position: absolute;
+    margin: auto;
+    padding-top: 5%;
+    background-color: rgb(147, 231, 255);
 }
+
 
 #game-screen div{
 text-align: center;
+
+/* z-index: -2; */
 }
 
-#current-tool{
-grid-column: 1/span 3;
+#UI-panel{
+grid-column: 3;
+grid-row: 2;
+flex-direction: column;
+align-self: end; 
+margin-bottom:5%;
+/* display: grid;
+grid-template-rows: 1fr 10fr 1fr; */
+}
+
+#tool-img{
+    object-fit: cover;
+    width: 100%;
 }
 
 #cut-grass{
     color: black;
+}
+
+#cut-button-container{
+    /* grid-row: 4; */
+    margin-top: 1%;
+    
 }
 
 #money{
@@ -73,11 +131,47 @@ color: black;
 }
 
 #money-div{
-    background-color: #298e46;
+    background-color: #298e46  !important;
     color: white;
+    grid-row: 4;
+}
 
+#tool-upgrade-container{
+    grid-row: 4;
 }
 
 #upgrade-tool{
     color: black;
+    
 }
+
+#soil {
+    background-color: #654321  !important;
+    grid-row: 3;
+    grid-column: span 3;
+    width: 100vw;
+    
+}
+
+#gardener {
+    grid-row: 2;
+    position: relative; 
+}
+
+#gardener img{
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    align-self: end ;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+}
+#lawn {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 90fr 10fr;
+}
+

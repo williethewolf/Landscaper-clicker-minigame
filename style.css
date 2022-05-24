@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
 body {
     width: 100vw;
     background-color: #654321;
     margin: auto;
+    height: 100vh;
 }
 
 button{
@@ -11,6 +14,7 @@ button{
       border-radius: 6px;
       box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
       box-sizing: border-box;
+      width: 80%;
       color: #fff;
       cursor: pointer;
       display: inline-block;
@@ -82,15 +86,37 @@ button-3:active {
     transition: height 6s ease-in-out; */
 }
 
+.modal {
+    background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+    /* display: none; */
+}
+
+.modal-content{
+    background-color: white;
+	height: 40%;
+	width: 60%;
+	border-radius: 20px;
+	margin: 15% auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
 #game-screen{
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    grid-template-rows: auto auto 10% auto;
+    grid-template-rows: 15% auto 10% ;
     width: 100vw;
+    
     object-fit: cover;
-    position: absolute;
+    /* position: absolute; */
     margin: auto;
-    padding-top: 5%;
+    /* padding-top: 5%; */
     background-color: rgb(147, 231, 255);
 }
 
@@ -99,6 +125,21 @@ button-3:active {
 text-align: center;
 
 /* z-index: -2; */
+}
+
+#title{
+    grid-column: 2;
+    align-self: start;
+    margin-bottom: 15%;
+    font-family: 'Rye', cursive;
+    font-size:3vw;
+    overflow: visible;
+    white-space: nowrap;
+    margin-left: -100%;
+    margin-right: -100%;
+    background-color: #c77a2d;
+    width: 100vw;
+    color: antiquewhite;
 }
 
 #UI-panel{
@@ -133,7 +174,7 @@ color: black;
 #money-div{
     background-color: #298e46  !important;
     color: white;
-    grid-row: 4;
+    /* grid-row: 4; */
 }
 
 #tool-upgrade-container{
@@ -160,12 +201,14 @@ color: black;
 
 #gardener img{
     object-fit: cover;
-    width: 100%;
+    width: 85%;
     display: block;
     align-self: end ;
     position: absolute;
     bottom: 0;
-    left: 10%;
+    left: 20%;
+    overflow:visible;
+    min-height: 67%;
 }
 #lawn {
     grid-column: 2;
@@ -175,3 +218,41 @@ color: black;
     grid-template-rows: 90fr 10fr;
 }
 
+@media only screen and (max-height: 500px) {
+    #title{
+        display: none;
+    }
+
+    #game-screen{
+       grid-template-rows: 0% 80% 20%;
+        
+    }
+        
+}
+
+@media only screen and (max-height: 390px) {
+    #title{
+        display: none;
+    }
+
+    #game-screen{
+        grid-template-rows: 90% 0% 22%;
+        width: 83vw;
+        
+    }
+    #cutButton{
+        margin-left: -100%;
+        margin-right: -90%; 
+    }
+
+    #upgrade-tool{
+        white-space: normal;
+    }
+    
+    #UI-panel {
+        margin-bottom: 4%;
+        max-height: 84vh;
+        overflow: visible;
+    }
+        
+}

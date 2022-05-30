@@ -22,13 +22,14 @@ const victoryModal = document.getElementById('victory-modal')
 let tools =[];
 let toolIndex = 0;
 let upgradeCounter=1;
+let cutIndex=0;
 
 
 //Tool creation
 const toolNames = ["Teeth","Rusty Scissors","Push Lawnmower","Battery-Powered Lawnmower","Team of starving students"]
 const toolProfit = [1,5,50,100,250]
 const toolCost = [0,5,25,250,500]
-const toolDelay = [6,4,2,1,0.5]
+const toolDelay = [1,0.75,0.50,0.25,0.05]
 const toolImgs = ["./assets/tool-teeth.png","./assets/tool-shears.png","./assets/tool-manual-lawn-mower.png","./assets/tool-bat-lawnmower.png","./assets/tool-team.png"]
 
 class Tool{
@@ -71,7 +72,7 @@ function cutGrassGrabCash(tool){
     // money += tool.profit
     // moneyDisplay.innerHTML = money;
     // console.log(money)
-    cutGrassGrowGrass()
+    cutGrassGrowGrass(tool)
     waitForTool(tool)
     
     
@@ -93,7 +94,7 @@ function cutGrassGrabCash(tool){
     }
     
     const closeWelcomeModal = () => {welcomeModal.style.display = 'none'}
-    const reload = () => {welcomeModal.style.display = 'none'; location.reload()}
+    const reload = () => {welcomeModal.style.display = 'none';window.location.reload(true)}
     //yeah yeah. I know. DRY, but It'3 am, I overdid the whole thing and I feel like I can slip here and be fine
     // const closeVictoryModal = () => {welcomeModal.style.display = 'none'}
 
@@ -146,14 +147,22 @@ function waitForTool(tool){
     
     t = currentTool.delay*1000
     waitTimer.innerHTML = `wating for ${currentTool.delay}s...`
-    setTimeout(function(){cutButton.disabled = false;waitTimer.innerHTML = "";money += tool.profit
-    moneyDisplay.innerHTML = money;},t);
+    setTimeout(function(){cutButton.disabled = false;waitTimer.innerHTML = "";},t);
 
 
 }
 
-function cutGrassGrowGrass(){
+function cutGrassGrowGrass(tool){
     isGrowingyooo= false
+		
+	if(grassImg.length-1>cutIndex){
+		console.log("should cut one grass")
+		grassImg[cutIndex].classList.add("cut-grass")
+		cutIndex++
+		console.log(cutIndex)
+	}else{
+		cutIndex=0
+	
     console.log("grass should grow")
     for(let i=0; i<grassImg.length; i++){
         if(grassImg[i].classList.contains("animate-growth")){
@@ -164,6 +173,7 @@ function cutGrassGrowGrass(){
     }
     if(!isGrowingyooo){
         for(let i=0; i<grassImg.length; i++){
+					grassImg[i].classList.remove("cut-grass")
         grassImg[i].classList.add("animate-growth")
         }
     }else{
@@ -171,8 +181,12 @@ function cutGrassGrowGrass(){
             console.log("bring it back to cero, then grow")
         grassImg[i].classList.remove("animate-growth") 
         void grassImg[i].offsetWidth
+				grassImg[i].classList.remove("cut-grass")
         grassImg[i].classList.add("animate-growth")
+					
         }  
+			money += tool.profit
+    moneyDisplay.innerHTML = money;
     }
     // var growth = 0;
     // var perMinute = 200;
@@ -192,6 +206,5 @@ function cutGrassGrowGrass(){
     //     )
     //     }
     // }
-    
+	}
 }
-

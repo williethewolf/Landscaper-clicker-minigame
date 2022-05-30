@@ -74,6 +74,14 @@ button:active {
     align-self: end ;
     overflow: visible;
 }
+.cut-grass{
+/* 	 	grid-row: 2;
+    content:url("./assets/grass-clipart.png");
+    width: 135%; */
+			height: 50% !important;
+/* 		align-self: end ;
+    overflow: visible; */
+}
 @keyframes growGrass{
     0%{
         height: 50%;

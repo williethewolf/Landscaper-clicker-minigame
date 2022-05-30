@@ -62,16 +62,12 @@ for(let i=0; i<grassImg.length; i++){
 let money = 0;
 moneyDisplay.innerHTML = `$${money}`;
 
-//let currentTool =tools[upgradeCounter];
 
 
 
 //Button actions
 function cutGrassGrabCash(tool){
     tool = currentTool
-    // money += tool.profit
-    // moneyDisplay.innerHTML = money;
-    // console.log(money)
     cutGrassGrowGrass(tool)
     waitForTool(tool)
     
@@ -86,18 +82,12 @@ function cutGrassGrabCash(tool){
             upgradeCounter += 1 
             toolImg.src=tools[toolIndex].img
             moneyDisplay.innerHTML = `$${money}`
-            // currentTool=tools[toolIndex]
-            // upgradeTool =tools[upgradeCounter]
-            //console.log(upgradeTool.cost)
-
         }
     }
     
     const closeWelcomeModal = () => {welcomeModal.style.display = 'none'}
     const reload = () => {welcomeModal.style.display = 'none';window.location.reload(true)}
-    //yeah yeah. I know. DRY, but It'3 am, I overdid the whole thing and I feel like I can slip here and be fine
-    // const closeVictoryModal = () => {welcomeModal.style.display = 'none'}
-
+    
     cutButton.addEventListener("click",()=>cutGrassGrabCash(currentTool))
     upgradeButton.addEventListener("click",()=>buyTool(currentTool,upgradeTool))
 
@@ -112,10 +102,7 @@ function cutGrassGrabCash(tool){
 function updateScreen(){
     currentTool=tools[toolIndex]
     upgradeTool =tools[upgradeCounter]
-    // if(moneyDisplay.innerHTML != `$${money}`)
-    // moneyDisplay.innerHTML = `$${money}`;
-    // console.log(toolIndex)
-    // console.log(tools.length)
+    
     if(toolIndex<tools.length-1){
     upgradeToolDisplay.innerHTML = `Buy ${upgradeTool.name} for $${upgradeTool.cost}` 
 
@@ -179,7 +166,7 @@ function cutGrassGrowGrass(tool){
             }
         }else{
             for(let i=0; i<grassImg.length; i++){
-                console.log("bring it back to cero, then grow")
+               //brings grass lenght down and grows back
             grassImg[i].classList.remove("animate-growth") 
                 void grassImg[i].offsetWidth
                 grassImg[i].classList.remove("cut-grass")

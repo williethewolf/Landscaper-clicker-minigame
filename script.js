@@ -143,10 +143,8 @@ function cutGrassGrowGrass(tool){
     isGrowingyooo= false
 		
 	if(grassImg.length-1>cutIndex){
-		console.log("should cut one grass")
 		grassImg[cutIndex].classList.add("cut-grass")
 		cutIndex++
-		console.log(cutIndex)
 	}else{
         //reset index and grow all patches
 		cutIndex=0
@@ -174,7 +172,7 @@ function cutGrassGrowGrass(tool){
                         
             }  
                 money += tool.profit
-        moneyDisplay.innerHTML = money;
+        moneyDisplay.innerHTML = `$${money}`;
         }
 	}
 }

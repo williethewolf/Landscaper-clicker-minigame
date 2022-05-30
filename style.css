@@ -76,13 +76,11 @@ button:active {
     overflow: visible;
 }
 .cut-grass{
-/* 	 	grid-row: 2;
-    content:url("./assets/grass-clipart.png");
-    width: 135%; */
-			height: 50% !important;
-/* 		align-self: end ;
-    overflow: visible; */
+	height: 50% !important;
+
 }
+
+/* Grass animation */
 @keyframes growGrass{
     0%{
         height: 50%;
@@ -97,9 +95,6 @@ button:active {
     animation-duration: 10s;
     animation-fill-mode: forwards;
     
-    /* animation-iteration-count: infinite; */
-    /* height: 300%;
-    transition: height 6s ease-in-out; */
 }
 
 .modal {
@@ -309,6 +304,15 @@ color: black;
         margin-top: 2%;
     }
         
+}
+
+/* All the responsive css */
+
+@media screen and (min-width: 1500px) {
+    #title{
+        font-size:3em;
+        
+    }
 }
 
 @media only screen and (max-height: 395px) {

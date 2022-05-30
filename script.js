@@ -161,50 +161,33 @@ function cutGrassGrowGrass(tool){
 		cutIndex++
 		console.log(cutIndex)
 	}else{
+        //reset index and grow all patches
 		cutIndex=0
-	
-    console.log("grass should grow")
-    for(let i=0; i<grassImg.length; i++){
-        if(grassImg[i].classList.contains("animate-growth")){
-            isGrowingyooo = true;
+        //Check for growth
+        for(let i=0; i<grassImg.length; i++){
+            if(grassImg[i].classList.contains("animate-growth")){
+                isGrowingyooo = true;
+            }else{
+                isGrowingyooo = false;
+            }
+        }
+        //if it's not growing
+        if(!isGrowingyooo){
+            for(let i=0; i<grassImg.length; i++){
+                grassImg[i].classList.remove("cut-grass")
+                grassImg[i].classList.add("animate-growth")
+            }
         }else{
-            isGrowingyooo = false;
+            for(let i=0; i<grassImg.length; i++){
+                console.log("bring it back to cero, then grow")
+            grassImg[i].classList.remove("animate-growth") 
+                void grassImg[i].offsetWidth
+                grassImg[i].classList.remove("cut-grass")
+                grassImg[i].classList.add("animate-growth")
+                        
+            }  
+                money += tool.profit
+        moneyDisplay.innerHTML = money;
         }
-    }
-    if(!isGrowingyooo){
-        for(let i=0; i<grassImg.length; i++){
-					grassImg[i].classList.remove("cut-grass")
-        grassImg[i].classList.add("animate-growth")
-        }
-    }else{
-        for(let i=0; i<grassImg.length; i++){
-            console.log("bring it back to cero, then grow")
-        grassImg[i].classList.remove("animate-growth") 
-        void grassImg[i].offsetWidth
-				grassImg[i].classList.remove("cut-grass")
-        grassImg[i].classList.add("animate-growth")
-					
-        }  
-			money += tool.profit
-    moneyDisplay.innerHTML = money;
-    }
-    // var growth = 0;
-    // var perMinute = 200;
-    // var perSecond = perMinute / 60;
-    // // for(i=0; i<grassImg.lengt; i++){
-    // //     if(grassImg.style.width==0 && grassImg.style.width < 300){
-    // //     setInterval(()=>{grassImg.style.width += Math.round(perSecond), 1000/perSecond})
-    // //     }
-    // // }
-    // console.log(grassImg[1].width)
-    // for(let i=0; i<grassImg.lengt; i++){
-    //     console.log("grass should be cut")
-    //     grassImg[i].style.width="0%"
-    //     console.log(`grass is this long ${grassImg[1].style.width}`)
-    //     if(grassImg[i].style.width.strip('%').parseInt()=="0" && grassImg[i].style.width.strip('%').parseInt() < 300){
-    //     setInterval(()=>{grassImg[i].style.width=`${(grassImg[i].style.width.strip('%').parseInt() += Math.round(perSecond), 1000/perSecond)}`}
-    //     )
-    //     }
-    // }
 	}
 }

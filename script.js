@@ -144,6 +144,7 @@ function cutGrassGrowGrass(tool){
 		
 	if(grassImg.length-1>cutIndex){
 		grassImg[cutIndex].classList.add("cut-grass")
+        grassImg[cutIndex].classList.remove("animate-growth")
 		cutIndex++
 	}else{
         //reset index and grow all patches

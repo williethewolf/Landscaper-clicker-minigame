@@ -17,3 +17,5 @@
 - Timer limited clicking to represent tool eficiency
 - Responsive
 
+## Link to the game
+https://williethewolf.github.io/Landscaper-clicker-minigame/
